@@ -1,0 +1,40 @@
+<!-- your-component.component.html -->
+<div class="container" >
+    <h3 class="text-center">Create New Project</h3>
+    <p class="text-center">Please enter the details of the project</p>
+    <p class="text-center text-success" *ngIf="projectCreated"> your project is created</p>
+    <p class="text-center text-danger" *ngIf="formInvalid"> Please Enter all the details of the project</p>
+    
+<form #myForm="ngForm" [formGroup]="projectForm" (ngSubmit)="$event.preventDefault();onSubmit(myForm)" class="project-form" >
+    <label for="title"><b>Title:</b> </label>
+    <P class="text-muted"><small>Enter the Title for the project</small> </P>
+    <input type="text" id="title" formControlName="title" class="form-control">
+    
+    <label for="description"><b>Description:</b> </label>
+    <P class="text-muted"><small>Give some description about the project  (min:200 wods)</small></P>
+    <textarea id="description" formControlName="description" class="form-control"></textarea>
+    
+    <label for="managerId"><b>Project Manager ID:</b></label>
+    <P class="text-muted"><small>Select the project manager to whom you want to assign this project.</small></P>
+    <select formControlName="project_manager_id" class="text-muted">
+        <option value="" disabled selected>Select Manager</option>
+        <option  *ngFor="let user of allManager " [value]="user.email">{{user.firstName}} {{user.lastName}}</option>
+      
+    </select>
+    <!-- <input type="email" id="managerId" formControlName="project_manager_id" class="form-control"> -->
+    
+    <label for="startDate"><b>Start Date:</b> </label>
+    <input type="date" id="startDate" formControlName="start_date" class="form-control">
+    
+    <label for="endDate"><b>End Date:</b></label>
+    <p class="text-muted">Expected end date for this project</p>
+    <input type="date" id="endDate" formControlName="end_date" class="form-control">
+    
+    <label for="status"><b>Status:</b></label>
+    <p class="text-muted"><small>NOT_STARTED,COMPLETED,IN_PROGRESS</small></p>
+    <input type="text" id="status" formControlName="status" class="form-control">
+    
+    <button type="submit" class="btn-submit">Submit</button>
+  </form>
+</div>
+  

@@ -1,0 +1,18 @@
+<h4 class="text-center">All Tasks</h4>
+<p class="text-muted" class="text-center">Here is the list and details of all Tasks</p>
+<div class="project-container" *ngFor="let task of allYourTasks; let i = index">
+    <div class="field">
+
+        <h5 class="text-center">{{i+1}}. {{task.taskName}}</h5>
+
+    </div>
+
+    <div class="field">
+        <p>{{task.description}}</p>
+    </div>
+    <!-- <div class="field">
+        <label>Project Name:</label>
+        <span>{{projects[i]}}</span>
+    </div> -->
+
+</div>

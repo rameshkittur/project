@@ -1,0 +1,110 @@
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.container{
+    max-width: 1100px;
+    margin-inline: auto;
+    overflow: hidden;
+    
+
+}
+/* nav{
+   
+     background-color: #c1e4fe;
+     box-shadow: 0 0 4px #bbd0e2;
+     position:fixed;
+     z-index: 99;
+     top: 0;
+     left: 0;
+     right: 0;
+    } */
+.login-register a{
+    text-decoration: none;
+    color:white;
+    padding:3px
+}
+
+ul{
+    list-style: none;
+}
+.flex{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.main-nav{
+    justify-content: space-between;
+    padding-block: 8px;
+}
+.nav-elements{
+    display:flex;
+    justify-content: space-between;
+    color:#093947;
+    gap:16px;
+    
+  }
+  .nav-link{
+    padding:4px;
+  }
+  nav{
+    font-size:21px ;
+    font-family: 'Roboto Condensed', sans-serif;
+    background-color:#A4D9E8
+  }
+  
+  .login-register button{
+    margin-right:16px
+  }
+  button{
+    padding:6px;
+    width:auto;
+         
+  }
+  .login{
+    background-color:#2874A6 ;
+    color:white
+  }
+  .register{
+    background-color:#FF4C00 ;
+    color:white
+  }
+
+  #photo1{
+    margin:2px 4px 2px 0px;
+    width:600px;
+    height:400px
+  }
+  .info-text{
+        font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        font-size:18px ;
+        box-sizing:border-box;
+        margin-left:4px
+  }
+  .employee-dashbord{
+    margin-top:4px;
+    background-color:#E8EFF7;
+    padding:2px
+  }
+  .details-text{
+    box-sizing:border-box;
+  }
+  .careers{
+    margin-right:15px;
+  }
+  footer{
+    height:70px;
+    background-color:#FCF4F2;
+    font-size:16px;
+    padding:2px
+  }
+  .login:hover{
+    background-color:#2E86C1;
+  }
+  .register:hover{
+    background-color:#BA4A00;
+  }
+
+ 

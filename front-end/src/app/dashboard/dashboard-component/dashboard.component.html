@@ -1,0 +1,15 @@
+<div *ngIf="isLogedIn ; else elseBlock" class="container">
+    <div class="header">
+        <app-header></app-header>
+    </div>
+    <div class="main-container">
+        <div class="side-nav">
+            <app-side-nav></app-side-nav>
+        </div>
+        <div class="main">
+           <router-outlet></router-outlet>
+        </div>
+    </div>
+    
+</div>
+<ng-template #elseBlock><h3 class="text-center">Please <a  routerLink="../login">Login</a> to see your dashboard.</h3></ng-template>

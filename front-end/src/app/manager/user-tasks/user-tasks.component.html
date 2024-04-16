@@ -1,0 +1,33 @@
+<div class="container">
+<h4 class="text-center my-3" >All Tasks</h4>
+
+<select [(ngModel)]="projectId" class="projectSelect text-muted form-control" (change)="loadTasks(projectId)">
+    <option value="" disabled selected>Select The Project</option>
+    <option *ngFor="let project of projectIdName " [value]="project.id">{{project.title}}</option>
+</select>
+<table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Task Id</th>
+        <th>Task Name</th>
+        <th>Assigned To</th>
+        <th>Due Date</th>
+        <th>Status</th>
+        <th>Task completed on</th>
+        <!-- Add more table headers as needed -->
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of tasksList; let i = index">
+        <td>{{ item.taskId }}</td>
+        <td>{{ item.taskName }}</td>
+        <td>{{ item.assignedTo}}</td>
+        <td>{{item.due_date}}</td>
+        <td>{{item.status}}</td>
+        <td>{{item.completed_on}}</td>
+        <!-- Add more table cells as needed -->
+      </tr>
+    </tbody>
+  </table>
+</div>
+

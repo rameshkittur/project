@@ -1,0 +1,67 @@
+<div class="register-contianer">
+    <div class="conatiner2">
+        <h3 id="sign-up-board">Sign Up</h3>
+        <div *ngIf="registrationSuccess">
+            <h5 class="text-success text-center">Registration successful!</h5>
+          </div>
+        <div *ngIf="userExist">
+            <h5 class="text-danger text-center">User email already exist</h5>
+          </div>
+          <div *ngIf="!isFormValid">
+            <p  class="text-danger text-center">Please Enter required fields</p>
+          </div>
+        <form 
+        [formGroup]="registrationForm" 
+        (ngSubmit)="$event.preventDefault(); submitForm()"
+        id="registration" >
+            <div class="register-content">
+
+                <label class="form-elements">
+                    <input type="text" placeholder="First Name*" class="form-control" formControlName="firstName"  >
+                    <div *ngIf="registrationForm.get('firstName')?.invalid &&(registrationForm.get('firstName')?.dirty || registrationForm.get('email')?.touched)">
+                        <small class="text-danger"
+                            *ngIf="registrationForm.get('email')?.hasError('required')">This field is required
+                        </small>
+                    </div>
+                </label>
+
+                <label class="form-elements">
+                    <input type="text" placeholder="Last Name" class="form-control" formControlName="lastName" >
+                </label>
+
+                <label class="form-elements">
+                    <input type="text" placeholder="email*" size="51px" class="form-control" formControlName="email" >
+                    <div *ngIf="registrationForm.get('email')?.invalid &&(registrationForm.get('email')?.dirty || registrationForm.get('email')?.touched)">
+                        <small class="text-danger"
+                            *ngIf="registrationForm.get('email')?.hasError('required')">Email is required
+                        </small>
+                        <small class="text-danger"
+                            *ngIf="registrationForm.get('email')?.hasError('email')">Enter corrct email
+                        </small>
+                    </div>
+                </label>
+
+                <label class="form-elements">
+                    <input type="password" placeholder="password*" id="password" size="51px" class="form-control " formControlName="password"  >
+                    <div *ngIf="registrationForm.get('password')?.invalid &&(registrationForm.get('password')?.dirty || registrationForm.get('password')?.touched)">
+                        <small class="text-danger"
+                            *ngIf="registrationForm.get('password')?.hasError('required')">Password is required
+                        </small>
+                        <small class="text-danger"
+                            *ngIf="registrationForm.get('password')?.hasError('minlength')">min length of password should be 7
+                        </small>
+                    </div>
+                </label>
+
+                <label>
+                    <button type="submit" class="form-btn" >Register</button>
+                </label>
+
+            </div>
+        </form>
+        <div class="check-login">
+           
+            <p>Are you already a member ? <a routerLink="../login">login</a></p>
+        </div>
+    </div>
+</div>

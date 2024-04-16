@@ -1,0 +1,68 @@
+<div *ngIf="userProfile; else profileForm" class="card">
+    <!-- Display user profile details -->
+    <!-- "gender": "male",
+    "phoneNumber": "123456790",
+    "department": "engineering",
+    "address": "market",
+    "allSkills": -->
+    <h2><b>Your Profile</b>
+        <fa-icon [icon]="user" class="m-4"></fa-icon>
+        </h2>
+    <p><b>Gender:</b> {{userProfile.gender}}</p>
+    <p><b>Email:</b> {{this.userEmail}}</p>
+    <p> <b>Department:</b> {{ userProfile.department }}</p>
+    <p><b>Phone Number:</b> {{ userProfile.phoneNumber}}</p>
+    <p><b>Address:</b> {{ userProfile.address }}</p>
+    <p ><b>skills:</b><li *ngFor = " let skill of skills">{{skill.name}}</li> </p>
+
+    <!-- Add more profile fields as needed -->
+  </div>
+  
+  <ng-template #profileForm>
+    <!-- Display profile form -->
+    <div class="card">
+        <h2 class="text-center">Create your profile</h2>
+        <p class="text-success text-center" *ngIf="success">Your profile is created</p>
+        <p class="text-danger text-center" *ngIf="!profileCreated">Profile is not created please try again</p>
+        <p class="text-danger text-center" *ngIf="wrongPhoneNumber">please enter correct phone number</p>
+    <form (ngSubmit)=" $event.preventDefault();onSubmit()">
+        <div>
+          <label for="phoneNumber">Phone Number:</label>
+          <input type="tel" id="phoneNumber" name="phoneNumber" [(ngModel)]="profile.phoneNumber" required>
+        </div>
+        <div>
+          <label for="address">Address:</label>
+          <textarea id="address" name="address" [(ngModel)]="profile.address" required></textarea>
+        </div>
+        <div>
+          <label for="department">Department:</label>
+          <select id="department" name="department" [(ngModel)]="profile.department" required>
+            <option value="">Select Department</option>
+            <option value="Engineering">Engineering</option>
+            <option value="IT">IT</option>
+            <option value="HR">HR</option>
+            <option value="Finance">Finance</option>
+            <option value="Marketing">Marketing</option>
+            <!-- Add more department options as needed -->
+          </select>
+        </div>
+        <div>
+          <label>Gender:</label>
+          <label><input type="radio" name="gender" [(ngModel)]="profile.gender" value="male" required> Male</label>
+          <label><input type="radio" name="gender" [(ngModel)]="profile.gender" value="female"> Female</label>
+          <!-- Add more gender options as needed -->
+        </div>
+        <div>
+          <label>Skills:</label>
+          <div class="skills">
+            <input type="text" name="skills" [(ngModel)]="skill" required>
+           
+            <button type="button" (click)="addSkill()">Add Skill</button>
+        </div>
+        <small class="text-muted">You added {{this.intSet.size}} Skills to your profile</small>
+        </div>
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+  </ng-template>
+  

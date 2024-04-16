@@ -1,0 +1,27 @@
+<div class="nav-items">
+    <div class="nav-item" routerLink="/admin-dashboard/all-users">
+        <fa-icon [icon]=" allUsers"></fa-icon>
+        ALL Users</div>
+    <div class="nav-item"  routerLink="/admin-dashboard/create-new-admin">
+        <fa-icon [icon]="newManager"></fa-icon>
+       New Admin / Manager</div>
+   
+    <div class="nav-item" routerLink="/admin-dashboard/update-or-delete">
+        <fa-icon [icon]="updateRole"></fa-icon>
+        Update Employee Role / Delete Employee</div>
+
+        <div class="nav-item " routerLink="/admin-dashboard/project">
+            <fa-icon [icon]="addProject" ></fa-icon>
+            Add New Project</div>
+        <div class="nav-item " routerLink="/admin-dashboard/all-projects">
+            <fa-icon [icon]="allProjects" ></fa-icon>
+            All Projects</div>
+        <div class="nav-item " routerLink="/admin-dashboard/update-projects">
+            <fa-icon [icon]="updateProject" ></fa-icon>
+            Update Project</div>
+        <div class="nav-item " (click)="logout()">
+            <fa-icon [icon]="logOut" ></fa-icon>
+            Logout</div>
+   
+    
+</div>

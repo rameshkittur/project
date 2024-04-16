@@ -1,0 +1,28 @@
+<div >
+    <div class="all-tasks" *ngIf="employeeList.length>0;else elseBlock">
+        
+        <table class="table table-striped">
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Role</th>
+                
+                <!-- Add more table headers as needed -->
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let item of employeeList; let i = index">
+                <td>{{ i + 1 }}</td>
+                <td>{{item.firstName}}</td>
+                <td>{{item.email}}</td>
+                <td>{{item.role}}</td>
+             
+                <!-- Add more table cells as needed -->
+              </tr>
+            </tbody>
+          </table> 
+    </div>
+    <ng-template #elseBlock ><div class="no-task"><h3>No User found</h3></div></ng-template>
+</div>

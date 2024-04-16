@@ -1,0 +1,29 @@
+<div class="nav-items">
+    <div class="nav-item" routerLink="create-new-task">
+        <fa-icon [icon]="createNewTask"></fa-icon>
+        Create New Task
+    </div>
+    <div class="nav-item" routerLink="tasks">
+        <fa-icon [icon]="allTasks"></fa-icon>
+        All Tasks
+    </div>
+    <div class="nav-item" routerLink="projects">
+        <fa-icon [icon]="projects"></fa-icon>
+        Projects
+    </div>
+    <div class="nav-item" routerLink="project-status">
+        <fa-icon [icon]="updateProjectStatus"></fa-icon>
+        Update status of project
+    </div>
+    <div class="nav-item" routerLink="update-task">
+        <fa-icon [icon]="updateTask"></fa-icon>
+        Update Task
+    </div>
+    <div class="nav-item " (click)="logout()">
+        <fa-icon [icon]="logOut"></fa-icon>
+        Logout
+    </div>
+
+
+
+</div>

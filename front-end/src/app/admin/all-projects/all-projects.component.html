@@ -1,0 +1,39 @@
+<div *ngIf="!isProjectEmpty; else elseBlock">
+    <h4 class="text-center">All The Projects</h4>
+    <p class="text-muted" class="text-center">Here is the list and details of all projects</p>
+    <div class="project-container" *ngFor="let project of projects">
+        <div class="field">
+
+            <h5 class="text-center">{{project.projectId}}.{{project.title}}</h5>
+
+        </div>
+
+        <div class="field">
+            <p>{{project.description}}</p>
+        </div>
+        <div class="field">
+            <label>Project Manager ID:</label>
+            <span>{{project.projectManagerId}}</span>
+        </div>
+
+        <div class="field">
+            <label>Start Date:</label>
+            <span>{{project.start_date}}</span>
+        </div>
+        <div class="field">
+            <label>Status:</label>
+            <span>{{project.status}}</span>
+        </div>
+        <div class="field">
+            <label>Expected End Date:</label>
+            <span>{{project.end_date}}</span>
+        </div>
+    </div>
+</div>
+
+<ng-template #elseBlock>
+    <div>
+        <h4 class="text-center">There are no projects</h4>
+        <p class="text-center">project list is empty</p>
+    </div>
+</ng-template>

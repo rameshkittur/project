@@ -1,0 +1,66 @@
+
+
+<div class="top-section">
+    <div class="widgets">
+        <div class="icon">
+            <fa-icon [icon]="project"></fa-icon>
+        </div>
+        <div class="value">
+            <div class="number-project">{{this.totalProjects}}</div>
+            <div class="">Projects</div>
+        </div>
+    </div>
+    <div class="widgets">
+        <div class="icon">
+            <fa-icon [icon]="tasks"></fa-icon>
+        </div>
+        <div class="value">
+            <div class="number-project">{{this.tasksList.length}}</div>
+            <div class="">Tasks</div>
+        </div>
+    </div>
+    <div class="widgets">
+        <div class="icon">
+            <fa-icon [icon]="remaining"></fa-icon>
+        </div>
+        <div class="value">
+            <div class="number-project">{{this.remainingTasks}}</div>
+            <div class="">Tasks Remaining</div>
+        </div>
+    </div>
+</div>
+<div class="middle-section">
+    <div class="chart-container">
+        <canvas  id="MyChart" >{{ chart }}</canvas>
+    </div>
+</div>
+<div class="bottom-section">
+    <div class="all-tasks" *ngIf="!isTasksListEmpty;else elseBlock">
+        
+        <table class="table table-striped">
+            <thead>
+              <tr>
+                <th>Task Id</th>
+                <th>Task Name</th>
+                <th>Assigned By</th>
+                <th>Due Date</th>
+                <th>Status</th>
+                <th>Task completed on</th>
+                <!-- Add more table headers as needed -->
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let item of tasksList; let i = index">
+                <td>{{ item.taskId }}</td>
+                <td>{{ item.taskName }}</td>
+                <td>{{ item.assignedBy }}</td>
+                <td>{{item.due_date}}</td>
+                <td>{{item.status}}</td>
+                <td>{{item.completed_on}}</td>
+                <!-- Add more table cells as needed -->
+              </tr>
+            </tbody>
+          </table> 
+    </div>
+    <ng-template #elseBlock ><div class="no-task"><h3>No Task is assigned</h3></div></ng-template>
+</div>

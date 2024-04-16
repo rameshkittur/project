@@ -1,0 +1,17 @@
+<div *ngIf="isLogedIn ; else elseBlock" class="container">
+    <div class="header">
+        <app-manager-header></app-manager-header>
+    </div>
+    <div class="main-container">
+        <div class="side-nav">
+            <app-manager-sidebar ></app-manager-sidebar>
+        </div>
+        <div class="main">
+            <!-- <app-admin-main></app-admin-main> -->
+            <router-outlet></router-outlet>
+        <!-- <ng-container *ngComponentOutlet="component"></ng-container> -->
+        </div>
+    </div>
+    
+</div>
+<ng-template #elseBlock><h3 class="text-center">Please <a  routerLink="../login">Login</a> to see your dashboard.</h3></ng-template>

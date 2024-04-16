@@ -1,0 +1,54 @@
+<!-- <div class="content-body" >
+ <p>login page</p>
+</div> -->
+<!-- src/app/login/login.component.html -->
+<div class="container">
+
+
+    <div class="login-container">
+
+        <h3>Login</h3>
+        <h5>Enter your details</h5>
+
+        <div *ngIf="loginFailed">
+            <p class="text-danger"><small>Enter correct email or password</small></p>
+        </div>
+        <div *ngIf="userNotExist">
+            <p class="text-danger"><small>You are not registerd</small></p>
+        </div>
+        <div *ngIf="formInvalid">
+            <p class="text-danger"><small>Please fill all the fields</small></p>
+        </div>
+
+        <form [formGroup]="loginForm" (ngSubmit)="$event.preventDefault(); submitForm()">
+            <div class="form-group">
+                <input type="text" id="email" placeholder="Email*" class="form-control" formControlName="email">
+                <div
+                    *ngIf="loginForm.get('email')?.invalid &&(loginForm.get('email')?.dirty || loginForm.get('email')?.touched)">
+                    <small class="text-danger" *ngIf="loginForm.get('email')?.hasError('required')">Email is required
+                    </small>
+                    <small class="text-danger" *ngIf="loginForm.get('email')?.hasError('email')">Enter valid email
+                    </small>
+                </div>
+
+            </div>
+            <div class="form-group mt-3">
+                <!-- <input type="password" id="password" placeholder="password*" > -->
+                <input type="password" id="password" placeholder="Password*" class="form-control"
+                    formControlName="password">
+                <div class="mb-2"
+                    *ngIf="loginForm.get('password')?.invalid &&(loginForm.get('password')?.dirty || loginForm.get('password')?.touched)">
+                    <small class="text-danger" *ngIf="loginForm.get('password')?.hasError('required')">Password is
+                        required
+                    </small>
+                    <small class="text-danger" *ngIf="loginForm.get('password')?.hasError('minlength')">Minimum Length
+                        of Password should be 7
+                    </small>
+                </div>
+            </div>
+            <button type="submit">Login</button>
+        </form>
+        <p><small>Dont't have account? <a href="" routerLink="../register">Register</a> </small></p>
+        <p > <small>Back to <a routerLink="../home">Home </a></small></p>
+    </div>
+</div>

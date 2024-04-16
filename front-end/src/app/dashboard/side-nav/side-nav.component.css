@@ -1,0 +1,16 @@
+.nav-items{
+    padding-top:40px;
+     
+}
+.nav-item{
+    padding:25px 50px;
+    cursor:pointer;
+}
+
+.nav-item:hover{
+    background-color: rgb(1, 38, 69);
+}
+fa-icon {
+    margin-right: 20px;
+    font-size: 22px;
+  }

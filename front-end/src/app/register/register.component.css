@@ -1,0 +1,63 @@
+.conatiner2{
+    width: 630px;
+    border: 1px solid black;
+    border-radius: 5px;
+    margin: 30px;
+    margin-left: 400px;
+    height: 450px;
+    margin-top: 100px;
+    box-shadow: 5px 5px 10px 10px #B7C9D4;
+}
+.register-content{
+    box-sizing: border-box;
+    width: 500px;
+    margin-left: 70px;
+    margin-top: 30px;
+    border-radius: 5px;
+}
+.form-elements{
+    margin: 20px;
+    border-radius: 5px;
+    height: 20px;
+}
+input{
+    border: 1px  solid black;
+    border-radius: 5px;
+    padding: 5px;
+   
+}
+.form-elements ::placeholder{
+    padding: 15px 10px 0px;
+}
+#sign-up-board{
+    margin-left: 250px;
+    margin-top: 20px;
+}
+.form-btn{
+  background-color: #FF4C00;
+  margin-left: 20px;
+  margin-bottom: 10px;
+  margin-top:8px;
+  border: 1px solid #FF4C00;
+  border-radius: 5px;
+  color: white;
+  width: 430px;
+  height: 33px;
+}
+.form-btn:hover{
+   background-color:#FF7F50
+}
+#my-Checkbox{
+  margin-left: 20px;
+  margin-top: 15px;
+  margin-bottom: 20px;
+}
+.check-login{
+    margin-left: 88px;
+}
+.check-login a{
+    text-decoration: none;
+}
+#password{
+    margin-bottom:10px;
+}

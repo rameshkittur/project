@@ -1,0 +1,30 @@
+<div class="card  ">
+    <h4>Update the progress of your project</h4>
+    <p>Select Project and its status</p>
+   
+    <p *ngIf="noInput" class="text-danger  my-0 mx-2">Please select project and status</p>
+    <p class="text-success" *ngIf="updateSuccess">Project status is updated</p>
+    <p class="text-success" *ngIf="errorOccured">Project status is not updated</p>
+    <form [formGroup]="statusForm" (ngSubmit)="$event.preventDefault();updateStatus()">
+
+        <div class="">
+            <select formControlName="projectId" class="text-muted">
+                <option value="" disabled selected>Select The Project</option>
+                <option *ngFor="let project of allYourProjects " [value]="project.id">{{project.title}}
+                </option>
+
+            </select>
+           
+        </div>
+        <div class="select-box">
+            <select class="update-status text-muted" formControlName="projectStatus">
+                <option value="" disabled selected>Select Status</option>
+                <option value="NOT_STARTED">Not started</option>
+                <option value="IN_PROGRESS">In progress</option>
+                <option value="COMPLETED">Completed</option>
+                
+            </select>
+        </div>
+        <button type="submit" class="btn ">Update Status</button>
+    </form>
+</div>

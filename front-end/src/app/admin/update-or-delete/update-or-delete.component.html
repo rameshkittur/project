@@ -1,0 +1,48 @@
+<!-- employee.component.html -->
+<div class="update-delete">
+    <div class="card  ">
+        <h4>Update Employee Role</h4>
+        <p>Enter Employee Email and Updated Role</p>
+        <p class="text-danger my-0 mx-2" *ngIf="noInput">Please enter Employee email and role</p>
+        <p class="text-success my-0 mx-2" *ngIf="updateSuccess">Employee role update is successful</p>
+        <div class="">
+
+            <!-- <input type="email" [(ngModel)]="email" placeholder="Email*" class="form-control" /> -->
+            <select [(ngModel)]="email" class="text-muted">
+                <option value="" disabled selected>Select Employee</option>
+                <option *ngFor="let user of allEmployeeExceptAdmin " [value]="user.email">{{user.firstName}} {{user.lastName}}
+                </option>
+
+            </select>
+        </div>
+        <div>
+
+            <!-- <input type="text" [(ngModel)]="newRole" placeholder="Role*" class="form-control" /> -->
+            <select class="select-role text-muted" [(ngModel)]="newRole">
+                <option value="" disabled selected>Select Role</option>
+                <option value="ADMIN">ADMIN</option>
+                <option value="MANAGER">MANAGER</option>
+
+            </select>
+        </div>
+        <button (click)="updateRole()" class="btn ">Update Role</button>
+    </div>
+
+    <div class="card">
+        <h4>Delete Employee</h4>
+        <p>Enter Employee Email</p>
+        <p class="text-danger my-0 mx-5" *ngIf="noEmpleeInput">Please select Employee </p>
+        <p class="text-success my-0 mx-5" *ngIf="deleteSuccess">Employee is deleted</p>
+        <div>
+
+            <!-- <input type="email" [(ngModel)]="userEmail" placeholder="Email*" class="form-control" /> -->
+            <select [(ngModel)]="userEmail" class="text-muted select">
+                <option value="" disabled selected>Select Employee</option>
+                <option *ngFor="let user of allEmployee " [value]="user.email">{{user.firstName}} {{user.lastName}}
+                </option>
+
+            </select>
+        </div>
+        <button (click)="deleteUser()" class="btn  m-10">Delete User</button>
+    </div>
+</div>

@@ -1,0 +1,48 @@
+/* your-component.component.css */
+.project-form {
+    max-width: 400px;
+    margin: auto;
+    display: flex; /* Use flexbox layout */
+    flex-direction: column; /* Arrange children vertically */
+  }
+  .form-control {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+  
+  .btn-submit {
+    background-color:#113c60;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin:5px;
+    align-self: flex-end;
+  }
+  
+  .btn-submit:hover {
+    background-color: rgb(1, 38, 69);
+  }
+  .container{
+    margin-left:30%;
+    margin-top:5%;
+    border-radius:4px;
+    width:600px;
+    background-color:#ffff;
+    padding:10px;
+  }
+  p{
+    margin-bottom:4px;
+  }
+  label{
+    margin-top:4px;
+  }
+  select{
+    padding:5px;
+    border-radius:4px;
+  }

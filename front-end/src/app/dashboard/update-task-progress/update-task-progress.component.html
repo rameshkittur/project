@@ -1,0 +1,30 @@
+<div class="card  ">
+    <h4>Update the progress of your task</h4>
+    <p>Select Task and its status</p>
+    <p *ngIf="invalidTask" class="text-danger  my-0 mx-2">Please enter valid Task Id</p>
+    <p *ngIf="noInput" class="text-danger  my-0 mx-2">Please select task and status</p>
+    <p class="text-success" *ngIf="updateSuccess">Task status is updated</p>
+    <p class="text-success" *ngIf="errorOccured">Task status is not updated</p>
+    <form [formGroup]="statusForm" (ngSubmit)="$event.preventDefault();updateStatus()">
+
+        <div class="">
+            <select formControlName="taskId" class="text-muted">
+                <option value="" disabled selected>Select The task</option>
+                <option *ngFor="let task of allYourTasks " [value]="task.taskId">{{task.taskName}}
+                </option>
+
+            </select>
+           
+        </div>
+        <div class="select-box">
+            <select class="update-status text-muted" formControlName="taskStatus">
+                <option value="" disabled selected>Select Status</option>
+                <option value="NOT_STARTED">Not started</option>
+                <option value="IN_PROGRESS">In progress</option>
+                <option value="COMPLETED">Completed</option>
+                
+            </select>
+        </div>
+        <button type="submit" class="btn ">Update Status</button>
+    </form>
+</div>

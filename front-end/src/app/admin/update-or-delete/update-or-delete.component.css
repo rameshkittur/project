@@ -1,0 +1,36 @@
+.card{
+    width:30rem;
+    margin:20px;
+    padding:20px;
+}
+input{
+    margin:10px;
+    padding:4px;
+    border-radius:4px;
+    width:350px;
+}
+select{
+    margin-left:5px;
+    width:350px;
+    padding:4px;
+    height:35Px;
+    border-radius:5px;
+    margin-bottom:5px;
+    max-height: 100px; /* Set the maximum height of the dropdown */
+    overflow-y: auto; 
+  
+}
+
+.update-delete{
+ margin-left:50%;
+}
+button{
+    background-color:#113c60;
+    color:#ffff;
+    margin:5px;
+    width:350px;
+}
+button:hover{
+    background-color:#1D507B;
+    color:#ffff;
+}

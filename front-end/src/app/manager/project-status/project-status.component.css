@@ -1,0 +1,31 @@
+.card{
+    width:450px;
+    margin:20px;
+    padding:10px;
+}
+select{
+    
+    border-radius:5px;
+    padding:2px;
+    width:300px;
+    margin:5px;
+    height:35px;
+}
+input{
+    width:300px;
+    margin:5px;
+}
+/* .select-box>select{
+    width:300px;
+    margin:5px;
+} */
+button{
+    margin:5px;
+    width:200px;
+    background-color:#113c60;
+    color:#ffff;
+}
+button:hover{
+    background-color:#1D507B;
+    color:#ffff;
+}

@@ -1,0 +1,20 @@
+<div class="nav-items">
+    <div class="nav-item" routerLink="../dashboard">
+        <fa-icon [icon]="home"></fa-icon>
+        Home</div>
+    <div class="nav-item" routerLink="/dashboard/profile">
+        <fa-icon [icon]="faUser"></fa-icon>
+        Profile</div>
+    <div class="nav-item" routerLink="/dashboard/update-task-progress">
+        <fa-icon [icon]="tasks" ></fa-icon>
+        Update task progress</div>
+    <div class="nav-item" routerLink="/dashboard/task-details">
+        <fa-icon [icon]=" details" ></fa-icon>
+        Task Details</div>
+    <div class="nav-item">
+        <fa-icon [icon]="help"></fa-icon>
+        Help</div>
+    <div class="nav-item" (click)="logout()">
+        <fa-icon [icon]="logOut" ></fa-icon>
+        Logout</div>
+</div>

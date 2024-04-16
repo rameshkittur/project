@@ -1,0 +1,30 @@
+<h4 class="text-center">Your Projects</h4>
+<p class="text-muted" class="text-center">Here is the list and details of all your projects</p>
+<div class="project-container" *ngFor="let project of projects;let i=index">
+    <div class="field">
+
+        <h5 class="text-center">{{i+1}}.{{project.title}}</h5>
+
+    </div>
+
+    <div class="field">
+        <p>{{project.description}}</p>
+    </div>
+    <!-- <div class="field">
+        <label>Project Manager ID:</label>
+        <span>{{project.projectManagerId}}</span>
+    </div> -->
+
+    <div class="field">
+        <label>Start Date:</label>
+        <span>{{project.start_date}}</span>
+    </div>
+    <div class="field">
+        <label>Status:</label>
+        <span>{{project.status}}</span>
+    </div>
+    <div class="field">
+        <label>Expected End Date:</label>
+        <span>{{project.end_date}}</span>
+    </div>
+</div>

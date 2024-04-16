@@ -1,0 +1,64 @@
+<!-- your-component.component.html -->
+<div class="container">
+    <h3 class="text-center">Update the Task</h3>
+    <p class="text-center">Select the project and task first to update task</p>
+    <p class="text-center text-success" *ngIf="taskCreationSuccess"> Task is updated</p>
+    <p class="text-center text-danger" *ngIf="formInValid"> Please fill all the fields</p>
+    <p class="text-center text-danger" *ngIf="responseError"> Error occured while updating task</p>
+    <!-- <p class="text-center text-danger" *ngIf="taskCreationSuccess">Entered </p> -->
+    <!-- 
+    <p class="text-center text-danger" *ngIf="formInvalid"> Please Enter all the details of the project</p> -->
+    <!-- (ngSubmit)="$event.preventDefault();onSubmit()" -->
+
+    <form class="task-form" (ngSubmit)="$event.preventDefault();onSubmit()" [formGroup]="taskForm">
+        <label for="title"><b>Project: </b> </label>
+        <P class="text-muted"><small>Select the project :</small> </P>
+        <select formControlName="projectId" class="text-muted" (change)="loadTasks()">
+            <option value="" disabled selected>Select The Project</option>
+            <option *ngFor="let project of projectIdName " [value]="project.id">{{project.title}}</option>
+        </select>
+
+        <label for="title"><b>Task: </b> </label>
+        <P class="text-muted"><small>Select the Task :</small> </P>
+        <select formControlName="taskId" class="text-muted" (change)=" loadTaskById()">
+            <option value="" disabled selected>Select The Task</option>
+            <option *ngFor="let task of tasksList" [value]="task.taskId">{{task.taskName}}</option>
+        </select>
+
+        <label for="title"><b>Task Name: </b> </label>
+        <P class="text-muted"><small>Enter the task name</small> </P>
+        <input type="text" id="taskName" formControlName="taskName" class="form-control">
+
+        <label for="description"><b>Description:</b> </label>
+        <P class="text-muted"><small>Give some description about the Task (min:200 wods)</small></P>
+        <textarea id="description" formControlName="description" class="form-control"></textarea>
+
+        <label for="employeeId"><b>Assign To:</b></label>
+        <P class="text-muted"><small>Select the Employee to whom you want to assign this Task.</small></P>
+        <select formControlName="assigned_to" class="text-muted">
+            <option value="" disabled selected>Select The employee</option>
+            <option *ngFor="let employee of onlyEmployees " [value]="employee.email">{{employee.name}}</option>
+        </select>
+        
+
+        <label for="projectId"><b>Project Id:</b></label>
+        <P class="text-muted"><small>Select the project  for this task.</small></P>
+
+        <select formControlName="projectId" class="text-muted">
+            <option value="" disabled selected>Select The Project</option>
+            <option *ngFor="let project of projectIdName " [value]="project.id">{{project.title}}</option>
+        </select>
+        <!-- <input type="number" id="projectId" formControlName="projectId" class="form-control"> -->
+
+
+        <label for="dueDate"><b>Due Date:</b></label>
+        <p class="text-muted">The date by which Task should be comleted</p>
+        <input type="date" id="dueDate" formControlName="due_date" class="form-control">
+
+        <label for="status"><b>Status:</b></label>
+        <p class="text-muted"><small>NOT_STARTED,COMPLETED,IN_PROGRESS</small></p>
+        <input type="text" id="status" formControlName="status" class="form-control">
+
+        <button type="submit" class="btn-submit">Submit</button>
+    </form>
+</div>
